@@ -1,0 +1,17 @@
+<!-- Angular Google Map Selector -->
+<agm-map 
+    [latitude]="latitude"  
+    [longitude]="longitude" 
+    [zoom]="zoom"
+    [disableDefaultUI]="false"
+    [zoomControl]="false">
+    <!-- Adjustable Marker -->
+    <agm-marker 
+      [latitude]="latitude"
+      [longitude]="longitude"
+      label="A"
+      [markerDraggable]="true"
+      (dragEnd)="markerDragEnd($event)"
+      >   
+  </agm-marker>
+</agm-map>

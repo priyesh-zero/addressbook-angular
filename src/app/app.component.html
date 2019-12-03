@@ -1,0 +1,94 @@
+<section class="principal">
+  <div class="navbar">
+    <div class="logo">
+      <strong>Angular</strong> 
+      <div class="icon">
+        <svg id="Capa_1" x="0px" y="0px"
+        viewBox="0 0 58 58" style="enable-background:new 0 0 58 58;" xml:space="preserve">
+          <g>
+            <polygon style="fill:#418CFC;" points="29,58 3,45 3,13 29,26 	"/>
+            <polygon style="fill:#3A80E2;" points="29,58 55,45 55,13 29,26 	"/>
+            <polygon style="fill:#418CFC;" points="3,13 28,0 55,13 29,26 	"/>
+          </g>
+        </svg>
+      </div> 
+      <strong>Demo</strong>
+    </div>
+  </div>
+  <div class="introduce">
+    <div class="big-lemma"> Create an Address  </div>
+    <div class="big-lemma">  for where user can add his address 🙂</div>
+    <div class="sub-lemma"> </div>
+    <button class="trial" (click)="commonService.showForm=!commonService.showForm">Create an Address</button>
+    <small> Resuable Component.</small>
+  </div>
+  <!-- Address form showing when the button is clicked -->
+  <div class="address" *ngIf="commonService.showForm">
+    <address editValue="editIndex"></address>
+  </div>
+  <div class="row">
+    <!-- List of addresses from the service -->
+    <address-card class="col-md-4"
+      *ngFor="let address of commonService.addressList; let i = index" 
+      [Name]="address.name"
+      [Type]="address.addressType"
+      [Address]="address.address"
+      [Index]="i"
+      (edit)="setEdit($event)"
+      [Phone]="address.mobile"></address-card>
+  </div>
+  <div class="description">
+    <div class="row">
+    <div class="col-md-4">
+      <div class="logoD">
+        <i class="material-icons">web</i>
+        Planning
+      </div>
+      <div class="textD">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus non lacus risus. Vivamus et diam eu neque porta sollicitudin. Sed ornare lobortis risus eget cursus. Phasellus tempor eleifend tincidunt
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="logoD">
+        <i class="material-icons">visibility</i>
+        Analysis
+      </div>
+      <div class="textD">
+        Morbi luctus ligula elit, non ornare ipsum cursus sed. Suspendisse quis urna ac nunc porttitor facilisis id sed turpis. Aenean augue purus, imperdiet non arcu nec, viverra maximus leo. Vestibulum imperdiet pharetra lacinia. Vestibulum in tellus a velit maximus 
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="logoD">
+        <i class="material-icons">build</i>
+        Implementation
+      </div>
+      <div class="textD">
+        Nunc ut tortor ac mi viverra consequat. Ut vulputate velit eu odio congue, a molestie orci eleifend. Pellentesque congue accumsan quam. Phasellus ac tincidunt lorem. Cras a rutrum nisi. Phasellus in interdum mauris, eu rutrum ex. Nunc eget dictum sapien.
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class="opinion">
+    <div class="inside">
+      <div class="imageO">
+        <img src="https://avatars0.githubusercontent.com/u/5733463?s=460&v=4">
+      </div>
+      <div class="textO">
+        <i>"Damn bro, after one year of using these technologies we’ve had our highest revenue-generating year so far. We exceeded our yearly goal, hitting it one month sooner than expected!"</i>
+        <br>
+        <small>-Jhon Doe, Creative Headhunter</small>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <div class="left">
+      OH, HELLO.
+      <br>
+      <br>
+      Want to talk? Drop me a line. I'm always interested in new projects, opportunities, or just chatting. 
+      <br>
+      <hr>
+      <a href="javascript:vpod(0)">umeshEr@gmail.com</a></div>
+    <div class="right">© 2019 UMESH</div>
+  </footer>
+</section>	

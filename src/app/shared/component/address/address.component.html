@@ -1,0 +1,123 @@
+<section>
+  <div class="container mt-4 addressContainer">
+      <form [formGroup]="addressForm" (ngSubmit)="onSubmit(addressForm)">
+    <div class="row mb-3">
+        <div class="col-md-12">
+         <h4>ADD A NEW ADDRESS</h4>
+          </div>
+    </div>
+    
+    <div class="row mb-3">
+          <div class="col-md-4">
+            <button class="btn btn-primary location" (click)="getLocation($event)"><i class="material-icons">
+                my_location
+                </i><span>Use my current location</span></button>
+                <!-- lat: {{lat}},
+                lng: {{lng}} -->
+            </div>
+            <div class="col-md-8">
+              <input id="autocomplete" placeholder="Or Search For a location" ngx-google-places-autocomplete [options]='options' #placesRef="ngx-places" (onAddressChange)="handleAddressChange($event)"/>
+            </div>
+    </div>
+    <!-- <input  type="text" class="form-control" formControlName="search" name="search" placeholder="search"> -->
+    <div class="row mb-2">
+      <div class="col-md-6">
+       <input type="text" class="form-control" formControlName="name" name="name" placeholder="Name">
+       <div class="error" *ngIf="isSubmitted && addressForm.get('name').hasError('required')">
+          Oops, please provide a name!
+        </div>
+      </div>
+      
+      <div class="col-md-6">
+          <input type="text" class="form-control" formControlName="mobile" name="mobile" placeholder="10-digit mobile number ">
+          <div class="error" *ngIf="isSubmitted && addressForm.get('mobile').hasError('required')">
+              Mobile number required!
+            </div>
+          <div class="error" *ngIf="isSubmitted && addressForm.get('mobile').hasError('pattern')">
+              Mobile number should be 10 digit!
+          </div>
+        </div>
+    </div>
+    
+    <div class="row mb-2">
+        <div class="col-md-6">
+         <input type="text" class="form-control" formControlName="pincode" name="pincode" placeholder="pincode">
+         <div class="error" *ngIf="isSubmitted && addressForm.get('pincode').hasError('required')">
+            Pincode required!
+          </div>
+          <div class="error" *ngIf="isSubmitted && addressForm.get('pincode').hasError('pattern')">
+              Pincode should be numeric!
+          </div>
+        </div>
+        <div class="col-md-6">
+            <input type="text" class="form-control" formControlName="locality" placeholder="Locality">
+            <div class="error" *ngIf="isSubmitted && addressForm.get('locality').hasError('required')">
+                Locality required!
+            </div>
+        </div>
+    </div>
+    
+     <div class="row mb-2">
+          <div class="col-md-12">
+         <textarea class="form-control" formControlName="address" name="address" placeholder="Address (Area and Street)"></textarea>
+         <div class="error" *ngIf="isSubmitted && addressForm.get('address').hasError('required')">
+            Address and street required!
+          </div>
+        </div>
+        </div>
+      
+      <div class="row mb-2">
+          <div class="col-md-6">
+           <input type="text" class="form-control" formControlName="cdt" name="cdt"placeholder="City/District/Town">
+           <div class="error" *ngIf="isSubmitted && addressForm.get('cdt').hasError('required')">
+              City/District/Town required!
+            </div>
+          </div>
+          <div class="col-md-6">
+              <input type="text" class="form-control" formControlName="state" name="state" placeholder="State">
+              <div class="error" *ngIf="isSubmitted && addressForm.get('state').hasError('required')" >
+                  State required!
+                </div>
+          </div>
+      </div>
+      
+      <div class="row mb-2">
+            <div class="col-md-6">
+             <input type="text" class="form-control" formControlName="landmark" placeholder="Landmark (Optional)">
+            </div>
+            <div class="col-md-6">
+                <input type="text" class="form-control" formControlName="alternatePhone" placeholder="Alternate Phone (Optional)">
+            </div>
+       </div>
+       <div class="row mb-2">
+          <div class="col-md-12">
+              <label class="labeltext">Address Type</label><br>
+		          <div class="form-check-inline">
+
+              <label class="customradio"><span class="radiotextsty">Home</span>
+                <input type="radio" checked="checked" name="addressType" value="home" formControlName="addressType">
+                <span class="checkmark"></span>
+              </label>        
+            <label class="customradio"><span class="radiotextsty">Work</span>
+              <input type="radio" name="addressType" value="work" formControlName="addressType">
+              <span class="checkmark"></span>
+            </label>
+
+				</div>
+          </div>
+          
+     </div>
+     <shared-map></shared-map>
+     <div class="row my-2">
+        <div class="col-md-12">
+            <button type="submit" class="btn btn-primary action save">SAVE</button>
+            <button class="btn btn-primary action cancel">CANCEL</button>
+        </div>
+
+      </div>
+
+    </form>  
+  </div>
+
+
+</section>
