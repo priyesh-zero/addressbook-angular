@@ -6,7 +6,7 @@
          <h4>ADD A NEW ADDRESS</h4>
           </div>
     </div>
-    
+
     <div class="row mb-3">
           <div class="col-md-4">
             <button class="btn btn-primary location" (click)="getLocation($event)"><i class="material-icons">
@@ -16,7 +16,7 @@
                 lng: {{lng}} -->
             </div>
             <div class="col-md-8">
-              <input id="autocomplete" placeholder="Or Search For a location" ngx-google-places-autocomplete [options]='options' #placesRef="ngx-places" (onAddressChange)="handleAddressChange($event)"/>
+              <input id="autocomplete" placeholder="Or Search For a location" ngx-google-places-autocomplete #placesRef="ngx-places" (onAddressChange)="handleAddressChange($event)"/>
             </div>
     </div>
     <!-- <input  type="text" class="form-control" formControlName="search" name="search" placeholder="search"> -->
@@ -27,7 +27,7 @@
           Oops, please provide a name!
         </div>
       </div>
-      
+
       <div class="col-md-6">
           <input type="text" class="form-control" formControlName="mobile" name="mobile" placeholder="10-digit mobile number ">
           <div class="error" *ngIf="isSubmitted && addressForm.get('mobile').hasError('required')">
@@ -38,7 +38,7 @@
           </div>
         </div>
     </div>
-    
+
     <div class="row mb-2">
         <div class="col-md-6">
          <input type="text" class="form-control" formControlName="pincode" name="pincode" placeholder="pincode">
@@ -56,7 +56,7 @@
             </div>
         </div>
     </div>
-    
+
      <div class="row mb-2">
           <div class="col-md-12">
          <textarea class="form-control" formControlName="address" name="address" placeholder="Address (Area and Street)"></textarea>
@@ -65,7 +65,7 @@
           </div>
         </div>
         </div>
-      
+
       <div class="row mb-2">
           <div class="col-md-6">
            <input type="text" class="form-control" formControlName="cdt" name="cdt"placeholder="City/District/Town">
@@ -80,7 +80,7 @@
                 </div>
           </div>
       </div>
-      
+
       <div class="row mb-2">
             <div class="col-md-6">
              <input type="text" class="form-control" formControlName="landmark" placeholder="Landmark (Optional)">
@@ -105,7 +105,7 @@
 
 				</div>
           </div>
-          
+
      </div>
      <shared-map></shared-map>
      <div class="row my-2">
@@ -116,7 +116,7 @@
 
       </div>
 
-    </form>  
+    </form>
   </div>
 
 

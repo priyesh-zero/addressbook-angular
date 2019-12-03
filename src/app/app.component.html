@@ -1,7 +1,7 @@
 <section class="principal">
   <div class="navbar">
     <div class="logo">
-      <strong>Angular</strong> 
+      <strong>Angular</strong>
       <div class="icon">
         <svg id="Capa_1" x="0px" y="0px"
         viewBox="0 0 58 58" style="enable-background:new 0 0 58 58;" xml:space="preserve">
@@ -11,7 +11,7 @@
             <polygon style="fill:#418CFC;" points="3,13 28,0 55,13 29,26 	"/>
           </g>
         </svg>
-      </div> 
+      </div>
       <strong>Demo</strong>
     </div>
   </div>
@@ -29,12 +29,11 @@
   <div class="row">
     <!-- List of addresses from the service -->
     <address-card class="col-md-4"
-      *ngFor="let address of commonService.addressList; let i = index" 
+      *ngFor="let address of commonService.addressList; let i = index"
       [Name]="address.name"
       [Type]="address.addressType"
       [Address]="address.address"
       [Index]="i"
-      (edit)="setEdit($event)"
       [Phone]="address.mobile"></address-card>
   </div>
   <div class="description">
@@ -54,7 +53,7 @@
         Analysis
       </div>
       <div class="textD">
-        Morbi luctus ligula elit, non ornare ipsum cursus sed. Suspendisse quis urna ac nunc porttitor facilisis id sed turpis. Aenean augue purus, imperdiet non arcu nec, viverra maximus leo. Vestibulum imperdiet pharetra lacinia. Vestibulum in tellus a velit maximus 
+        Morbi luctus ligula elit, non ornare ipsum cursus sed. Suspendisse quis urna ac nunc porttitor facilisis id sed turpis. Aenean augue purus, imperdiet non arcu nec, viverra maximus leo. Vestibulum imperdiet pharetra lacinia. Vestibulum in tellus a velit maximus
       </div>
     </div>
     <div class="col-md-4">
@@ -85,10 +84,10 @@
       OH, HELLO.
       <br>
       <br>
-      Want to talk? Drop me a line. I'm always interested in new projects, opportunities, or just chatting. 
+      Want to talk? Drop me a line. I'm always interested in new projects, opportunities, or just chatting.
       <br>
       <hr>
       <a href="javascript:vpod(0)">umeshEr@gmail.com</a></div>
     <div class="right">© 2019 UMESH</div>
   </footer>
-</section>	
+</section>

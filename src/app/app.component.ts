@@ -10,7 +10,7 @@ export class AppComponent {
   title = 'Address Component';
   showAddressComponent: boolean = false;
 
-  // Calling service for getting the addressList 
-  constructor(private commonService: CommonService) {}
+  // Calling service for getting the addressList
+  constructor(public commonService: CommonService) {}
 
 }
